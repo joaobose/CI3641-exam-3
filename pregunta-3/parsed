@@ -1,0 +1,40 @@
+class A {
+    int a = 4, b = 9
+
+    fun p(int x): int {
+        a = b * x
+        return q(a)
+    }
+
+    fun q(int y): int {
+        return a + y
+    }
+}
+
+class B extends A {
+    A sopa = new C()
+
+    fun q(int y): int {
+        return sopa.p(a + b) + y
+    }
+}
+
+class C extends B {
+    int c = 0
+
+    fun p(int x): int {
+        a = 3 + x
+        c = 2 * b - x 
+        return q(a + b + c)
+    }
+
+    fun q(int y): int {
+        return c + y
+    } 
+}
+
+A mon = new B()
+A don = new C()
+B go = new C()
+
+print(mon.p(1) + don.p(1) + go.p(1))
