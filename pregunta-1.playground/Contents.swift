@@ -96,7 +96,6 @@ class Busqueda {
     final func buscar(D: Int, H: Int) -> Int {
         self.open(nodo: D)
         var count = 0
-        var debbug = ""
         
         while !self.done() {
             guard let next = self.select() else { return -1 }
