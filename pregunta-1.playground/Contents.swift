@@ -84,7 +84,7 @@ final class Grafo {
     }
 }
 
-// MARK: - Clase grafo
+// MARK: - Clase busqueda
 class Busqueda {
     final let grafo: Grafo
     final var closed: Set<Int> = []
