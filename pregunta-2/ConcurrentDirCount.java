@@ -8,7 +8,9 @@ import java.util.concurrent.TimeUnit;
 public class ConcurrentDirCount {
 
     // ------ Definimos un thread pool compartido
-    static ExecutorService threadPool = Executors.newFixedThreadPool(10);
+    // Este tipo de pool crea thread cuando lo necesita pero reutiliza las que ya 
+    // fueron creadas si estan disponible.
+    static ExecutorService threadPool = Executors.newCachedThreadPool();
 
     // ------ Definimos el resultado, inicialmente esta en cero
     static int result = 0;
